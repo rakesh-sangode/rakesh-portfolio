@@ -8,9 +8,9 @@
         },
         d: function (e) {
             this._window = $(window),
-            this._document = $(document),
-            this._body = $('body'),
-            this._html = $('html')
+                this._document = $(document),
+                this._body = $('body'),
+                this._html = $('html')
 
         },
 
@@ -32,7 +32,7 @@
             imJs.onePageNav();
         },
 
-        
+
         activePopupDemo: function (e) {
             $('.popuptab-area li a.demo-dark').on('click', function (e) {
                 $('.demo-modal-area').addClass('dark-version');
@@ -54,42 +54,42 @@
             })
         },
 
-        contactForm: function () {
-            $('.rwt-dynamic-form').on('submit', function (e) {
-				e.preventDefault();
-				var _self = $(this);
-				var __selector = _self.closest('input,textarea');
-				_self.closest('div').find('input,textarea').removeAttr('style');
-				_self.find('.error-msg').remove();
-				_self.closest('div').find('button[type="submit"]').attr('disabled', 'disabled');
-				var data = $(this).serialize();
-				$.ajax({
-					url: 'mail.php',
-					type: "post",
-					dataType: 'json',
-					data: data,
-					success: function (data) {
-						_self.closest('div').find('button[type="submit"]').removeAttr('disabled');
-						if (data.code == false) {
-							_self.closest('div').find('[name="' + data.field + '"]');
-							_self.find('.rn-btn').after('<div class="error-msg"><p>*' + data.err + '</p></div>');
-						} else {
-							$('.error-msg').hide();
-							$('.form-group').removeClass('focused');
-							_self.find('.rn-btn').after('<div class="success-msg"><p>' + data.success + '</p></div>');
-							_self.closest('div').find('input,textarea').val('');
+        // contactForm: function () {
+        //     $('.rwt-dynamic-form').on('submit', function (e) {
+        // 		e.preventDefault();
+        // 		var _self = $(this);
+        // 		var __selector = _self.closest('input,textarea');
+        // 		_self.closest('div').find('input,textarea').removeAttr('style');
+        // 		_self.find('.error-msg').remove();
+        // 		_self.closest('div').find('button[type="submit"]').attr('disabled', 'disabled');
+        // 		var data = $(this).serialize();
+        // 		$.ajax({
+        // 			url: 'mail.php',
+        // 			type: "post",
+        // 			dataType: 'json',
+        // 			data: data,
+        // 			success: function (data) {
+        // 				_self.closest('div').find('button[type="submit"]').removeAttr('disabled');
+        // 				if (data.code == false) {
+        // 					_self.closest('div').find('[name="' + data.field + '"]');
+        // 					_self.find('.rn-btn').after('<div class="error-msg"><p>*' + data.err + '</p></div>');
+        // 				} else {
+        // 					$('.error-msg').hide();
+        // 					$('.form-group').removeClass('focused');
+        // 					_self.find('.rn-btn').after('<div class="success-msg"><p>' + data.success + '</p></div>');
+        // 					_self.closest('div').find('input,textarea').val('');
 
-							setTimeout(function () {
-								$('.success-msg').fadeOut('slow');
-							}, 5000);
-						}
-					}
-				});
-			});
-        },
+        // 					setTimeout(function () {
+        // 						$('.success-msg').fadeOut('slow');
+        // 					}, 5000);
+        // 				}
+        // 			}
+        // 		});
+        // 	});
+        // },
 
-        
-        
+
+
         wowActive: function () {
             new WOW().init();
         },
@@ -151,12 +151,12 @@
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-chevron-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-chevron-right"></i></button>',
                 responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        arrows: false,
-                    }
-                }]
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            arrows: false,
+                        }
+                    }]
             });
 
 
@@ -171,28 +171,28 @@
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>',
                 responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 868,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: false,
-                        }
+                    breakpoint: 1124,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
                     }
+                },
+                {
+                    breakpoint: 868,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false,
+                    }
+                }
                 ]
             });
 
@@ -208,28 +208,28 @@
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>',
                 responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 868,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: false,
-                        }
+                    breakpoint: 1124,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
                     }
+                },
+                {
+                    breakpoint: 868,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false,
+                    }
+                }
                 ]
             });
 
@@ -244,28 +244,28 @@
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-chevron-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-chevron-right"></i></button>',
                 responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            arrows: false,
-                        }
-                    },
-                    {
-                        breakpoint: 577,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            arrows: false,
-                        }
+                    breakpoint: 1124,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
                     }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 577,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false,
+                    }
+                }
                 ]
             });
 
@@ -280,26 +280,26 @@
                 prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-chevron-left"></i></button>',
                 nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-chevron-right"></i></button>',
                 responsive: [{
-                        breakpoint: 1124,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                        }
-                    },
-                    {
-                        breakpoint: 868,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+                    breakpoint: 1124,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
                     }
+                },
+                {
+                    breakpoint: 868,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
                 ]
             });
 
@@ -324,7 +324,7 @@
                     $(scrollTop).css('opacity', '0');
                 }
             });
-            
+
             //Click event to scroll to top
             $(scrollTop).on('click', function () {
                 $('html, body').animate({
@@ -414,7 +414,7 @@
 
         },
 
-        awsActivation:function(e){
+        awsActivation: function (e) {
             AOS.init();
         },
 
@@ -426,7 +426,7 @@
                 scrollThreshold: 0.2,
                 filter: ':not(.external)',
                 easing: 'swing',
-                scrollChange: function($currentListItem) {
+                scrollChange: function ($currentListItem) {
                     console.log(this);
                 }
             });

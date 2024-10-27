@@ -16205,7 +16205,7 @@ div#featured-project-carousel {
   position: relative;
   border-radius: 14px;
   background: #ff014f;
-  background: linear-gradient(145deg, #ff014f 0%, #00ffb1 100%);
+  background: linear-gradient(145deg, #ff014f 0%, #A020F0 100%);
 }
 
 .progress-charts .progress .progress-bar span.percent-label {
